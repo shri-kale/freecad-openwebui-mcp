@@ -197,7 +197,7 @@ mcpo is a proxy from the Open WebUI project that turns an MCP server into an HTT
 5. In a new terminal, start mcpo with the key in place of `YOUR-KEY`, and keep that terminal open while you work:
 
    ```bash
-   uvx --with "mcp<2" mcpo --host 127.0.0.1 --port 8000 --api-key "YOUR-KEY" --config ~/freecad-mcpo/config.json
+   uvx --with "mcp<2" --with "fastapi==0.115.12" mcpo --host 127.0.0.1 --port 8000 --api-key "YOUR-KEY" --config ~/freecad-mcpo/config.json
    ```
 
    `--host 127.0.0.1` keeps mcpo reachable only from this machine. `--with "mcp<2"` is needed because mcpo fails to start with version 2 of the MCP library (`ImportError: cannot import name 'streamablehttp_client'`).
